@@ -3,7 +3,7 @@ import { useNavigate } from "react-router";
 import { motion, AnimatePresence } from "motion/react";
 import { ChevronRight } from "lucide-react";
 import { StarryBackground } from "../components/StarryBackground";
-import logo from "figma:asset/fff456d1796a5b1b94f8aeee4e4fbb7a0f5c291d.png";
+// import logo from "figma:asset/fff456d1796a5b1b94f8aeee4e4fbb7a0f5c291d.png";
 
 const slides = [
   {
@@ -74,7 +74,7 @@ export function Onboarding() {
               transition={{ delay: 0.2 }}
               className="flex items-center justify-center"
             >
-              <img src={logo} alt="Logo" className="h-20 w-20" />
+              <img src="/assets/logo.png" alt="Logo" className="h-20 w-20" />
             </motion.div>
 
             {/* Text Content */}

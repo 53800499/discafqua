@@ -5,7 +5,6 @@ import { MapPin, Heart, Sparkles, TrendingUp } from "lucide-react";
 import { LocationPermissionModal } from "../components/LocationPermissionModal";
 import { BottomNav } from "../components/BottomNav";
 import { countries, places } from "../data/mockData";
-import logo from "figma:asset/fff456d1796a5b1b94f8aeee4e4fbb7a0f5c291d.png";
 
 export function Home() {
   const [showLocationModal, setShowLocationModal] = useState(false);
@@ -45,7 +44,7 @@ export function Home() {
       <div className="sticky top-0 z-30 border-b border-white/10 bg-black/80 backdrop-blur-xl">
         <div className="flex items-center justify-between px-6 py-4">
           <div className="flex items-center gap-3">
-            <img src={logo} alt="Logo" className="h-10 w-10" />
+            <img src="/assets/logo.png" alt="Logo" className="h-10 w-10" />
             <div>
               <h1 className="bg-gradient-to-r from-[#d4a574] to-[#f59e0b] bg-clip-text font-bold text-transparent">
                 AfricaDiscover
