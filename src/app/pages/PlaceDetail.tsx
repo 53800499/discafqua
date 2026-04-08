@@ -8,6 +8,8 @@ import {
   Navigation,
   Calendar,
   Clock,
+  BookOpen,
+  Users,
 } from "lucide-react";
 import { places } from "../data/mockData";
 
@@ -168,16 +170,55 @@ export function PlaceDetail() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5 }}
-          className="space-y-3 pb-6"
+          className="mb-6 space-y-3"
         >
-          <button className="flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-[#d4a574] to-[#f59e0b] py-4 font-medium text-black shadow-lg shadow-[#d4a574]/30 transition-all hover:scale-[1.02] hover:shadow-xl hover:shadow-[#d4a574]/40">
+          <button
+            onClick={() => navigate(`/navigate/${place.id}`)}
+            className="flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-[#d4a574] to-[#f59e0b] py-4 font-medium text-black shadow-lg shadow-[#d4a574]/30 transition-all hover:scale-[1.02] hover:shadow-xl hover:shadow-[#d4a574]/40"
+          >
             <Navigation className="h-5 w-5" />
-            Obtenir l'itinéraire
+            S'y rendre
           </button>
-          <button className="w-full rounded-xl border border-white/10 bg-white/5 py-4 font-medium text-white transition-all hover:bg-white/10">
-            Ajouter au voyage
+          <button
+            onClick={() => navigate(`/story/${place.id}`)}
+            className="flex w-full items-center justify-center gap-2 rounded-xl border border-[#d4a574] bg-[#d4a574]/10 py-4 font-medium text-[#d4a574] transition-all hover:bg-[#d4a574]/20"
+          >
+            <BookOpen className="h-5 w-5" />
+            Découvrir l'histoire
           </button>
         </motion.div>
+
+        {/* Tour Guide Suggestion */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.6 }}
+          className="mb-6 overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/5 to-white/[0.02] backdrop-blur-sm"
+        >
+          <div className="p-6">
+            <div className="mb-4 flex items-center gap-3">
+              <div className="rounded-full bg-[#d4a574]/20 p-3">
+                <Users className="h-6 w-6 text-[#d4a574]" />
+              </div>
+              <div className="flex-1">
+                <h3 className="font-bold text-white">
+                  Souhaitez-vous être accompagné ?
+                </h3>
+                <p className="text-sm text-gray-400">
+                  Explorez avec un guide local expert
+                </p>
+              </div>
+            </div>
+            <button
+              onClick={() => navigate("/guides")}
+              className="w-full rounded-xl border border-white/20 bg-white/5 py-3 font-medium text-white transition-all hover:bg-white/10"
+            >
+              Voir les guides disponibles
+            </button>
+          </div>
+        </motion.div>
+
+        <div className="pb-6" />
       </div>
     </div>
   );

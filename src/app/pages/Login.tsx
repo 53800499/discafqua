@@ -3,7 +3,7 @@ import { useNavigate, Link } from "react-router";
 import { motion } from "motion/react";
 import { Mail, Lock, Eye, EyeOff } from "lucide-react";
 import { StarryBackground } from "../components/StarryBackground";
-// import logo from "figma:asset/fff456d1796a5b1b94f8aeee4e4fbb7a0f5c291d.png";
+import logo from "figma:asset/fff456d1796a5b1b94f8aeee4e4fbb7a0f5c291d.png";
 
 export function Login() {
   const [email, setEmail] = useState("");
@@ -46,7 +46,7 @@ export function Login() {
         {/* Logo */}
         <div className="mb-8 flex justify-center">
           <motion.img
-            src="/assets/logo.png"
+            src={logo}
             alt="Logo"
             className="h-16 w-16"
             initial={{ scale: 0 }}

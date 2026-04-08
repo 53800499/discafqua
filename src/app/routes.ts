@@ -8,6 +8,10 @@ import { CountryDetail } from "./pages/CountryDetail";
 import { PlaceDetail } from "./pages/PlaceDetail";
 import { Stories } from "./pages/Stories";
 import { Profile } from "./pages/Profile";
+import { ExploreAround } from "./pages/ExploreAround";
+import { PlaceNavigation } from "./pages/PlaceNavigation";
+import { StoryView } from "./pages/StoryView";
+import { TourGuides } from "./pages/TourGuides";
 
 export const router = createBrowserRouter([
   {
@@ -31,12 +35,28 @@ export const router = createBrowserRouter([
     Component: Explore,
   },
   {
+    path: "/explore-around",
+    Component: ExploreAround,
+  },
+  {
     path: "/country/:id",
     Component: CountryDetail,
   },
   {
     path: "/place/:id",
     Component: PlaceDetail,
+  },
+  {
+    path: "/navigate/:id",
+    Component: PlaceNavigation,
+  },
+  {
+    path: "/story/:id",
+    Component: StoryView,
+  },
+  {
+    path: "/guides",
+    Component: TourGuides,
   },
   {
     path: "/stories",

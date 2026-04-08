@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { motion } from "motion/react";
-import { BookOpen, Volume2, MapPin, ArrowLeft } from "lucide-react";
+import { BookOpen, MapPin } from "lucide-react";
 import { BottomNav } from "../components/BottomNav";
+import { StoryReader } from "../components/StoryReader";
 import { stories } from "../data/mockData";
 
 export function Stories() {
@@ -10,98 +11,7 @@ export function Stories() {
   const story = stories.find((s) => s.id === selectedStory);
 
   if (selectedStory && story) {
-    return (
-      <div className="min-h-screen bg-[#0a0a0a]">
-        {/* Header Image */}
-        <div className="relative h-[40vh]">
-          <img
-            src={story.image}
-            alt={story.title}
-            className="h-full w-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-black/50 to-transparent" />
-
-          {/* Back Button */}
-          <button
-            onClick={() => setSelectedStory(null)}
-            className="absolute left-6 top-6 rounded-full bg-black/50 p-3 backdrop-blur-sm transition-all hover:bg-black/70"
-          >
-            <ArrowLeft className="h-6 w-6 text-white" />
-          </button>
-
-          {/* Story Title */}
-          <div className="absolute bottom-0 left-0 right-0 p-6">
-            <div className="mb-2 flex items-center gap-2">
-              <MapPin className="h-4 w-4 text-[#d4a574]" />
-              <span className="text-sm text-[#d4a574]">{story.country}</span>
-            </div>
-            <h1 className="text-3xl font-bold text-white">{story.title}</h1>
-          </div>
-        </div>
-
-        {/* Content */}
-        <div className="px-6 py-6">
-          {/* Audio Player (Mock) */}
-          <motion.button
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="mb-6 flex w-full items-center gap-3 rounded-xl border border-white/10 bg-white/5 p-4 transition-all hover:bg-white/10"
-          >
-            <div className="rounded-full bg-gradient-to-r from-[#d4a574] to-[#f59e0b] p-3">
-              <Volume2 className="h-6 w-6 text-black" />
-            </div>
-            <div className="flex-1 text-left">
-              <div className="font-medium text-white">Écouter l'histoire</div>
-              <div className="text-sm text-gray-400">Narration audio</div>
-            </div>
-          </motion.button>
-
-          {/* Story Content */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1 }}
-            className="space-y-4"
-          >
-            <p className="text-lg leading-relaxed text-gray-300">
-              {story.content}
-            </p>
-            <p className="leading-relaxed text-gray-300">
-              L'histoire de l'Afrique est riche et diverse, tissée de récits de
-              royaumes puissants, de traditions ancestrales et de cultures
-              vibrantes qui continuent d'inspirer le monde entier.
-            </p>
-            <p className="leading-relaxed text-gray-300">
-              Chaque région du continent possède ses propres légendes,
-              héritages et contributions uniques à l'histoire de l'humanité.
-              Des pyramides d'Égypte aux royaumes médiévaux d'Afrique de
-              l'Ouest, en passant par les civilisations swahilies de la côte
-              est, l'Afrique a toujours été au cœur de l'innovation et de la
-              créativité humaine.
-            </p>
-
-            {/* Related Topics */}
-            <div className="mt-8">
-              <h3 className="mb-4 font-bold text-white">
-                Thèmes connexes
-              </h3>
-              <div className="flex flex-wrap gap-2">
-                {["Histoire", "Culture", "Tradition", "Patrimoine"].map(
-                  (tag) => (
-                    <span
-                      key={tag}
-                      className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-gray-300"
-                    >
-                      {tag}
-                    </span>
-                  )
-                )}
-              </div>
-            </div>
-          </motion.div>
-        </div>
-      </div>
-    );
+    return <StoryReader story={story} onClose={() => setSelectedStory(null)} />;
   }
 
   return (
@@ -149,7 +59,7 @@ export function Stories() {
                     </p>
                     <div className="flex items-center gap-2 text-sm text-gray-500">
                       <BookOpen className="h-4 w-4" />
-                      <span>5 min de lecture</span>
+                      <span>{story.pages?.length || 1} pages</span>
                     </div>
                   </div>
                 </div>
