@@ -49,6 +49,37 @@ export interface TourGuide {
   available: boolean;
 }
 
+export interface Dish {
+  id: string;
+  name: string;
+  image: string;
+  countryId: string;
+  country: string;
+  category: string;
+}
+
+export interface Accommodation {
+  id: string;
+  name: string;
+  image: string;
+  location: string;
+  countryId: string;
+  country: string;
+  type: string;
+  rating: number;
+  pricePerNight: number;
+}
+
+export interface Activity {
+  id: string;
+  name: string;
+  image: string;
+  category: string;
+  duration: string;
+  country: string;
+  price: number;
+}
+
 export const countries: Country[] = [
   {
     id: "egypt",
@@ -163,8 +194,8 @@ export const places: Place[] = [
     image: "https://images.unsplash.com/photo-1675682346189-25c58dd5a214?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb3JvY2NvJTIwZGVzZXJ0JTIwc2FoYXJhJTIwZHVuZXN8ZW58MXx8fHwxNzc0MzUyOTk0fDA&ixlib=rb-4.1.0&q=80&w=1080",
     countryId: "morocco",
     country: "Maroc",
-    latitude: 31.0,
-    longitude: -5.0,
+    latitude: 31,
+    longitude: -5,
     category: "Désert",
   },
   {
@@ -175,7 +206,7 @@ export const places: Place[] = [
     countryId: "benin",
     country: "Bénin",
     latitude: 6.3617,
-    longitude: 2.0850,
+    longitude: 2.085,
     category: "Monument",
   },
 ];
@@ -304,7 +335,7 @@ export const tourGuides: TourGuide[] = [
     name: "Kwame Mensah",
     photo: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtYW4lMjBwb3J0cmFpdCUyMHByb2Zlc3Npb25hbHxlbnwxfHx8fDE3NzQzNTMwMDB8MA&ixlib=rb-4.1.0&q=80&w=1080",
     specialty: "Safaris et faune sauvage",
-    rating: 5.0,
+    rating: 5,
     experience: "8 ans d'expérience",
     languages: ["Français", "Swahili", "Anglais"],
     pricePerHour: 55,
@@ -331,5 +362,194 @@ export const tourGuides: TourGuide[] = [
     languages: ["Français", "Arabe", "Espagnol"],
     pricePerHour: 35,
     available: true,
+  },
+];
+
+export const dishes: Dish[] = [
+  {
+    id: "dish-1",
+    name: "Jollof Rice",
+    image:
+      "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=1080",
+    countryId: "senegal",
+    country: "Sénégal",
+    category: "Riz"
+  },
+  {
+    id: "dish-2",
+    name: "Injera",
+    image:
+      "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=1080",
+    countryId: "ethiopia",
+    country: "Éthiopie",
+    category: "Pain"
+  },
+  {
+    id: "dish-3",
+    name: "Tagine d'Agneau",
+    image:
+      "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=1080",
+    countryId: "morocco",
+    country: "Maroc",
+    category: "Ragoût"
+  },
+  {
+    id: "dish-4",
+    name: "Nyama na Irio",
+    image:
+      "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=1080",
+    countryId: "kenya",
+    country: "Kenya",
+    category: "Viande"
+  },
+  {
+    id: "dish-5",
+    name: "Mafé",
+    image:
+      "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=1080",
+    countryId: "mali",
+    country: "Mali",
+    category: "Ragoût"
+  },
+  {
+    id: "dish-6",
+    name: "Bobotie",
+    image:
+      "https://images.unsplash.com/photo-1625867858881-dcf2cef3e3c5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=1080",
+    countryId: "south-africa",
+    country: "Afrique du Sud",
+    category: "Curry"
+  }
+];
+
+export const accommodations: Accommodation[] = [
+  {
+    id: "hotel-1",
+    name: "Kempinski Hotel Cairo",
+    image:
+      "https://images.unsplash.com/photo-1582719471384-894fbb16e074?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=1080",
+    location: "Le Caire",
+    countryId: "egypt",
+    country: "Égypte",
+    type: "Hôtel de luxe",
+    rating: 4.8,
+    pricePerNight: 280
+  },
+  {
+    id: "hotel-2",
+    name: "Four Seasons Safari Lodge",
+    image:
+      "https://images.unsplash.com/photo-1731329571540-a1d6dfc902b8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhZnJpY2FuJTIwYmVhY2glMjB6YW56aWJhciUyMHBhcmFkaXNlfGVufDF8fHx8MTc3NDM1Mjk5Mnww&ixlib=rb-4.1.0&q=80&w=1080",
+    location: "Serengeti",
+    countryId: "tanzania",
+    country: "Tanzanie",
+    type: "Lodge Safari",
+    rating: 4.9,
+    pricePerNight: 450
+  },
+  {
+    id: "hotel-3",
+    name: "La Mamounia",
+    image:
+      "https://images.unsplash.com/photo-1582719471384-894fbb16e074?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=1080",
+    location: "Marrakech",
+    countryId: "morocco",
+    country: "Maroc",
+    type: "Palais historique",
+    rating: 4.7,
+    pricePerNight: 320
+  },
+  {
+    id: "hotel-4",
+    name: "One & Only Cape Town",
+    image:
+      "https://images.unsplash.com/photo-1731329571540-a1d6dfc902b8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhZnJpY2FuJTIwYmVhY2glMjB6YW56aWJhciUyMHBhcmFkaXNlfGVufDF8fHx8MTc3NDM1Mjk5Mnww&ixlib=rb-4.1.0&q=80&w=1080",
+    location: "Le Cap",
+    countryId: "south-africa",
+    country: "Afrique du Sud",
+    type: "Hôtel de luxe",
+    rating: 4.9,
+    pricePerNight: 550
+  },
+  {
+    id: "hotel-5",
+    name: "Nairobi Tented Camp",
+    image:
+      "https://images.unsplash.com/photo-1582719471384-894fbb16e074?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=1080",
+    location: "Nairobi",
+    countryId: "kenya",
+    country: "Kenya",
+    type: "Camp de glamping",
+    rating: 4.6,
+    pricePerNight: 200
+  },
+  {
+    id: "hotel-6",
+    name: "Zanzibar Palace",
+    image:
+      "https://images.unsplash.com/photo-1731329571540-a1d6dfc902b8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhZnJpY2FuJTIwYmVhY2glMjB6YW56aWJhciUyMHBhcmFkaXNlfGVufDF8fHx8MTc3NDM1Mjk5Mnww&ixlib=rb-4.1.0&q=80&w=1080",
+    location: "Zanzibar",
+    countryId: "tanzania",
+    country: "Tanzanie",
+    type: "Resort balnéaire",
+    rating: 4.5,
+    pricePerNight: 180
+  }
+];
+
+export const activities: Activity[] = [
+  {
+    id: "activity-1",
+    name: "Visite des Pyramides de Gizeh",
+    image: "https://images.unsplash.com/photo-1696269061458-0b405e2fe812?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxweXJhbWlkcyUyMGVneXB0JTIwYW5jaWVudCUyMG1vbnVtZW50fGVufDF8fHx8MTc3NDM1Mjk5Nnww&ixlib=rb-4.1.0&q=80&w=1080",
+    category: "Historique",
+    duration: "4h",
+    country: "Égypte",
+    price: 85,
+  },
+  {
+    id: "activity-2",
+    name: "Safari dans le Serengeti",
+    image: "https://images.unsplash.com/photo-1760199025541-63bc2c3a7754?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhZnJpY2FuJTIwc2F2YW5uYSUyMHN1bnNldCUyMGdvbGRlbnxlbnwxfHx8fDE3NzQzNTI5OTh8MA&ixlib=rb-4.1.0&q=80&w=1080",
+    category: "Aventure",
+    duration: "8h",
+    country: "Tanzanie",
+    price: 220,
+  },
+  {
+    id: "activity-3",
+    name: "Cours de Cuisine Marocaine",
+    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb29raW5nJTIwY2xhc3MlMjBtb3JvY2NvfGVufDF8fHx8MTc3NDM1MzAwMnww&ixlib=rb-4.1.0&q=80&w=1080",
+    category: "Culinaire",
+    duration: "3h",
+    country: "Maroc",
+    price: 65,
+  },
+  {
+    id: "activity-4",
+    name: "Plongée à Zanzibar",
+    image: "https://images.unsplash.com/photo-1731329571540-a1d6dfc902b8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhZnJpY2FuJTIwYmVhY2glMjB6YW56aWJhciUyMHBhcmFkaXNlfGVufDF8fHx8MTc3NDM1Mjk5Mnww&ixlib=rb-4.1.0&q=80&w=1080",
+    category: "Sport nautique",
+    duration: "6h",
+    country: "Tanzanie",
+    price: 120,
+  },
+  {
+    id: "activity-5",
+    name: "Visite du Marché du Cap",
+    image: "https://images.unsplash.com/photo-1592910725283-4a7752699e67?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjYXBlJTIwdG93biUyMHNvdXRoJTIwYWZyaWNhJTIwbWFya2V0fGVufDF8fHx8MTc3NDM1MzAwMnww&ixlib=rb-4.1.0&q=80&w=1080",
+    category: "Culture",
+    duration: "2h",
+    country: "Afrique du Sud",
+    price: 35,
+  },
+  {
+    id: "activity-6",
+    name: "Randonnée sur Table Mountain",
+    image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0YWJsZSUyMG1vdW50YWluJTIwaGlraW5nJTIwY2FwZXxlbnwxfHx8fDE3NzQzNTMwMDJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+    category: "Aventure",
+    duration: "5h",
+    country: "Afrique du Sud",
+    price: 45,
   },
 ];

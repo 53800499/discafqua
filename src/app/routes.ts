@@ -12,6 +12,9 @@ import { ExploreAround } from "./pages/ExploreAround";
 import { PlaceNavigation } from "./pages/PlaceNavigation";
 import { StoryView } from "./pages/StoryView";
 import { TourGuides } from "./pages/TourGuides";
+import { Gastronomy } from "./pages/Gastronomy";
+import { Accommodations } from "./pages/Accommodations";
+import { Activities } from "./pages/Activities";
 
 export const router = createBrowserRouter([
   {
@@ -61,6 +64,18 @@ export const router = createBrowserRouter([
   {
     path: "/stories",
     Component: Stories,
+  },
+  {
+    path: "/gastronomy",
+    Component: Gastronomy,
+  },
+  {
+    path: "/accommodations",
+    Component: Accommodations,
+  },
+  {
+    path: "/activities",
+    Component: Activities,
   },
   {
     path: "/profile",
